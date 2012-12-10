@@ -338,10 +338,14 @@ xyz94zyx::xyz95zyx("2");
  {
       global $priority,$asg_id,$page;
       $a1_qst=xyz39zyx::xyz49zyx(xyz71zyx::xyz79zyx($asg_id));
+      $a1_qstx=xyz39zyx::xyz49zyx(xyz71zyx::xyz79zyx($asg_id));
       if(xyz39zyx::xyz59zyx($a1_qst)==0) return "";
       $i=0;
       $pager_html = "";
       $finish = 0;
+	  // echo "<pre>";
+	  // print_r(xyz39zyx::xyz57zyx($a1_qst));
+	  // echo "</pre>";
       while($a3=xyz39zyx::xyz57zyx($a1_qst))
       {
                   $i++;
@@ -351,12 +355,25 @@ xyz94zyx::xyz95zyx("2");
                      $bgcolor = "green";
 					 $pager_html .= $a3['priority']." of ";
                   }
-                 /*$pager_html.= "<u><a style='cursor:pointer;background-color:$bgcolor' onmouseout='HideObject(\"tblTip\")' ".
-                              " onmouseover='ShowQst(event.pageX, event.pageY ,".$a3['priority'].")' onclick='LoadQst(\"$page\",$a3[question_type_id],$a3[priority],$a3[id],$finish)'>".$i."</a></u>&nbsp;";
-      */
+                 
+      
 	  }
 	  $pager_html .=xyz39zyx::xyz59zyx($a1_qst);
-
+	  $o = 0;
+	  // $zzz=xyz39zyx::xyz57zyx($a1_qstx);
+	  $pager_html .= "&nbsp;|&nbsp;Jump : <select onchange='LoadQst(\"$page\",this.value.split(\"#\")[0],this.value.split(\"#\")[1],this.value.split(\"#\")[2],$finish)'>";
+	  while($a3x=xyz39zyx::xyz57zyx($a1_qstx))
+      {
+		  $o++;
+		  $active = ($priority==$a3x['priority'])?"selected":"";
+		  $pager_html .= "<option ".$active." value='".$a3x['question_type_id']."#".$a3x['priority']."#".$a3x['id']."'>";
+		  $pager_html .= $o;
+		  $pager_html .= "</option>";
+	  }
+	  $pager_html .= "</select>";
+	  // $pager_html .= "<u><a style='cursor:pointer;background-color:$bgcolor' onmouseout='HideObject(\"tblTip\")' ".
+                              // " onmouseover='ShowQst(event.pageX, event.pageY ,".$a3['priority'].")' onclick=''>".$i."</a></u>&nbsp;";
+	  
       return $pager_html."&nbsp;&nbsp;";
  }
 

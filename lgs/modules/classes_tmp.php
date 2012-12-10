@@ -23,17 +23,6 @@
     }
 </script>
 
-    <table width="100%">
-        <tr>
-            <td class="desc_text">
-                <span class="label"><a name="edit"></a>Name :</span> <input class="simple_field" style="width:200px;" type="text" id="txtName" name="txtName" /> <input class="simple_buttons" type="button" class="st_button" id="btnAdd" onclick ="AddNewCls()" value ="Add">
-                <input type="hidden" id="hdnT" name="hdnT" value="add">
-            </td>
-			<td>
-			<span style="font-size:15px;float:right" class="label">Total : <?php echo $total?>
-			</td>
-        </tr>
-    </table>
     <div id="div_grid"><?php echo $grid_html ?></div>
     <br>
     

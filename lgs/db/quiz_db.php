@@ -7,7 +7,7 @@ class xyz83zyx{
     {
 		$author = ($_SESSION['user_type']=="1")?null:$author;
 		$author = ($author!=null)?"and author='".$author."'":"";
-        $y2 = "select * from quizzes where parent_id=0 $author";
+        $y2 = "select * from quizzes where parent_id=0 $author order by id desc";
         return $y2;
     }
     public static function xyz84zyxId($id=null)

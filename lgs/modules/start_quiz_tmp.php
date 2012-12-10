@@ -165,6 +165,7 @@
 
     function LoadQst(page,question_type, priority, qst_id, finish)
     {
+		// alert(qst_id);
         document.getElementById('divText').innerHTML="Please, wait ... ";
           $.post(page, { ajax:"yes" ,data_post:"yes", load_priority:priority , load_question:"yes"},
          function(data){

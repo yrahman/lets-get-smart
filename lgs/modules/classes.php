@@ -42,9 +42,6 @@ xyz94zyx::xyz95zyx("1");
     }    
     //$z2->links =array("Az"=>"az.php" , "En"=>"english.php");
     $y1 = clazz::get($_GET['sch_id']);
-	$t1 = xyz39zyx::xyz49zyx($y1);
-	$total = xyz39zyx::xyz59zyx($t1);
-	
     $z2->DrowTable($y1);
     $grid_html = $z2->table;    
 

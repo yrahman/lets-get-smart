@@ -38,7 +38,7 @@ xyz94zyx::xyz95zyx(array("1","3"));
         while($a3_ans=xyz39zyx::xyz57zyx($rs_ans))
         {
             $i++;
-            ${"txtChoise".$i} = $a3_ans["answer_text"];
+            ${"txtChoise".$i} = html_entity_decode($a3_ans["answer_text"]);
             ${"txtCrctAnswer".$i} = $a3_ans["correct_answer_text"];
             ${"ans_selected".$i} = $a3_ans["correct_answer"]=="1" ? "checked" : "";
         }
@@ -135,7 +135,7 @@ xyz94zyx::xyz95zyx(array("1","3"));
                 {
                     if(!isset($_POST["txtMulti".$i])) break;
 
-                    $answer_text = trim($_POST["txtMulti".$i]);
+                    $answer_text = trim(htmlentities($_POST["txtMulti".$i]));
                     $correct_answer = isset($_POST["chkMulti".$i]) ==true ? 1 : 0;
                     $correct_answer_text="";
                 }
@@ -143,9 +143,9 @@ xyz94zyx::xyz95zyx(array("1","3"));
                 {
                     if(!isset($_POST["txtOne".$i])) break;
 
-                    $answer_text = trim($_POST["txtOne".$i]);
+                    $answer_text = trim(htmlentities($_POST["txtOne".$i]));
                     $correct_answer = isset($_POST["rdOne"]) ==true && $_POST["rdOne"]==$i? 1 : 0;
-                    $reason = ($correct_answer==1)?trim($_POST["reason"]):"";
+                    $reason = ($correct_answer==1)?trim(htmlentities($_POST["reason"])):"";
                     $correct_answer_text="";
                 }
                 else if($question_type==3)
@@ -154,7 +154,7 @@ xyz94zyx::xyz95zyx(array("1","3"));
 
                     $answer_text = "";
                     $correct_answer = 0;
-                    $correct_answer_text=trim($_POST["txtArea".$i]);
+                    $correct_answer_text=trim(htmlentities($_POST["txtArea".$i]));
                 }
                 else if($question_type==2)
                 {
@@ -174,9 +174,9 @@ xyz94zyx::xyz95zyx(array("1","3"));
                 {
                     if(!isset($_POST["txtMultiText".$i])) break;
 
-                    $answer_text = trim($_POST["txtMultiText".$i]);
+                    $answer_text = trim(htmlentities($_POST["txtMultiText".$i]));
                     $correct_answer = 0;
-                    $correct_answer_text=trim($_POST["txtMultiCrctAnswer".$i]);
+                    $correct_answer_text=trim(htmlentities($_POST["txtMultiCrctAnswer".$i]));
                 }
                 
 
