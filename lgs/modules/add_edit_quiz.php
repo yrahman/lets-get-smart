@@ -62,9 +62,9 @@ xyz94zyx::xyz95zyx(array("1","3"));
     }
 
 
-    include_once "ckeditor/ckeditor.php";     
-    $CKEditor = new CKEditor();
-    $CKEditor->basePath = 'ckeditor/';
+    // include_once "ckeditor/ckeditor.php";     
+    // $CKEditor = new CKEditor();
+    // $CKEditor->basePath = 'ckeditor/';
 
 
     function desc_func()
